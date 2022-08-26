@@ -1,0 +1,4 @@
+/home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/EDA.dir
+/home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/dynamicVector.dir
+/home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/rebuild_cache.dir
