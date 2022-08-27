@@ -102,6 +102,130 @@ build dynamicVector: CXX_EXECUTABLE_LINKER__dynamicVector_Debug CMakeFiles/dynam
   TARGET_FILE = dynamicVector
   TARGET_PDB = dynamicVector.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target VectorFijo
+
+
+#############################################
+# Order-only phony target for VectorFijo
+
+build cmake_object_order_depends_target_VectorFijo: phony || CMakeFiles/VectorFijo.dir
+
+build CMakeFiles/VectorFijo.dir/lab01/vectorFijo.cpp.o: CXX_COMPILER__VectorFijo_Debug /home/misash/Escritorio/UCSP/EDA/lab01/vectorFijo.cpp || cmake_object_order_depends_target_VectorFijo
+  DEP_FILE = CMakeFiles/VectorFijo.dir/lab01/vectorFijo.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/VectorFijo.dir
+  OBJECT_FILE_DIR = CMakeFiles/VectorFijo.dir/lab01
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target VectorFijo
+
+
+#############################################
+# Link the executable VectorFijo
+
+build VectorFijo: CXX_EXECUTABLE_LINKER__VectorFijo_Debug CMakeFiles/VectorFijo.dir/lab01/vectorFijo.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/VectorFijo.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = VectorFijo
+  TARGET_PDB = VectorFijo.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target VectorDinamico
+
+
+#############################################
+# Order-only phony target for VectorDinamico
+
+build cmake_object_order_depends_target_VectorDinamico: phony || CMakeFiles/VectorDinamico.dir
+
+build CMakeFiles/VectorDinamico.dir/lab01/vectorOObjetos.cpp.o: CXX_COMPILER__VectorDinamico_Debug /home/misash/Escritorio/UCSP/EDA/lab01/vectorOObjetos.cpp || cmake_object_order_depends_target_VectorDinamico
+  DEP_FILE = CMakeFiles/VectorDinamico.dir/lab01/vectorOObjetos.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/VectorDinamico.dir
+  OBJECT_FILE_DIR = CMakeFiles/VectorDinamico.dir/lab01
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target VectorDinamico
+
+
+#############################################
+# Link the executable VectorDinamico
+
+build VectorDinamico: CXX_EXECUTABLE_LINKER__VectorDinamico_Debug CMakeFiles/VectorDinamico.dir/lab01/vectorOObjetos.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/VectorDinamico.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = VectorDinamico
+  TARGET_PDB = VectorDinamico.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target vectorModular
+
+
+#############################################
+# Order-only phony target for vectorModular
+
+build cmake_object_order_depends_target_vectorModular: phony || CMakeFiles/vectorModular.dir
+
+build CMakeFiles/vectorModular.dir/lab01/vectorModular.cpp.o: CXX_COMPILER__vectorModular_Debug /home/misash/Escritorio/UCSP/EDA/lab01/vectorModular.cpp || cmake_object_order_depends_target_vectorModular
+  DEP_FILE = CMakeFiles/vectorModular.dir/lab01/vectorModular.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/vectorModular.dir
+  OBJECT_FILE_DIR = CMakeFiles/vectorModular.dir/lab01
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target vectorModular
+
+
+#############################################
+# Link the executable vectorModular
+
+build vectorModular: CXX_EXECUTABLE_LINKER__vectorModular_Debug CMakeFiles/vectorModular.dir/lab01/vectorModular.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/vectorModular.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = vectorModular
+  TARGET_PDB = vectorModular.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target vectorDinamico
+
+
+#############################################
+# Order-only phony target for vectorDinamico
+
+build cmake_object_order_depends_target_vectorDinamico: phony || CMakeFiles/vectorDinamico.dir
+
+build CMakeFiles/vectorDinamico.dir/lab01/vectorDinamico.cpp.o: CXX_COMPILER__vectorDinamico_Debug /home/misash/Escritorio/UCSP/EDA/lab01/vectorDinamico.cpp || cmake_object_order_depends_target_vectorDinamico
+  DEP_FILE = CMakeFiles/vectorDinamico.dir/lab01/vectorDinamico.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/vectorDinamico.dir
+  OBJECT_FILE_DIR = CMakeFiles/vectorDinamico.dir/lab01
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target vectorDinamico
+
+
+#############################################
+# Link the executable vectorDinamico
+
+build vectorDinamico: CXX_EXECUTABLE_LINKER__vectorDinamico_Debug CMakeFiles/vectorDinamico.dir/lab01/vectorDinamico.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/vectorDinamico.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = vectorDinamico
+  TARGET_PDB = vectorDinamico.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -137,7 +261,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/misash/Escritorio/UCSP/EDA/cmake-build-debug
 
-build all: phony EDA dynamicVector
+build all: phony EDA dynamicVector VectorFijo VectorDinamico vectorModular vectorDinamico
 
 # =============================================================================
 # Built-in targets

@@ -1,5 +1,12 @@
 # ninja log v5
-0	188	1661544150211068284	CMakeFiles/EDA.dir/main.cpp.o	a3d5152132ac9525
-188	231	1661544150255067993	EDA	c499e8ebe18197
-0	204	1661544156267028550	CMakeFiles/dynamicVector.dir/dynamicVector.cpp.o	f02b3a8d8ad59bfb
+222	266	1661572190844079319	vectorModular	a302bed47553e098
 204	244	1661544156307028289	dynamicVector	a0aa6214d297bea6
+0	266	1661571961696085788	CMakeFiles/VectorDinamico.dir/lab01/VectorDinamico.cpp.o	45ecb44fc8b04777
+188	231	1661544150255067993	EDA	c499e8ebe18197
+1	230	1661572210353420042	CMakeFiles/VectorDinamico.dir/lab01/vectorOObjetos.cpp.o	a057046ea45729b5
+230	275	1661572210401423339	VectorDinamico	bac909cce527815c
+0	188	1661544150211068284	CMakeFiles/EDA.dir/main.cpp.o	a3d5152132ac9525
+0	222	1661572190800076292	CMakeFiles/vectorModular.dir/lab01/vectorModular.cpp.o	c7246eba7387a325
+0	204	1661544156267028550	CMakeFiles/dynamicVector.dir/dynamicVector.cpp.o	f02b3a8d8ad59bfb
+0	227	1661572276165933131	CMakeFiles/vectorDinamico.dir/lab01/vectorDinamico.cpp.o	4f474ba82412a95f
+228	272	1661572276209936144	vectorDinamico	6bd8577200d227cf
