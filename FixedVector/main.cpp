@@ -1,78 +1,36 @@
-//
-// Created by misash on 26/08/22.
-//
 #include <iostream>
 
 using namespace std;
 
+struct FixedVector{
+  int  gVec[100];
+  int gnCount=0;
 
+  void Insert(int elem){
+    if(gnCount < 100) gVec[gnCount++] = elem;
+  }
 
-template <typename T>
-class DynamicVector{
-public:
-
-    DynamicVector(T size){
-        m_size = size;
-        m_v=new T[m_size];
-        m_nelem=0;//size
-    }
-
-    ~DynamicVector(){
-        delete[] m_v;
-    }
-
-    int size(){
-        return m_nelem;
-    }
-
-    void resize(){
-        T* p=new T[2*m_size];
-        for( int i = 0; i < m_size ; i ++){
-            p[i]=m_v[i];
-        }
-        delete[] m_v;
-        m_v=p;
-        m_size= 2*m_size;
-    }
-
-    void push_back(int x){
-        if(m_nelem == m_size)
-            resize();
-        m_v[m_nelem++]=x;
-    }
-
-
-    void print(){
-        cout<<"\n";
-        for (int i = 0; i <m_nelem; ++i)
-            cout<<m_v[i]<<" ";
-    }
-
-private:
-    T* m_v;
-    int m_size;
-    int m_nelem;
-
+  void Print(){
+    cout<<"\n";
+    for(int i=0;i<gnCount;i++) cout<<gVec[i]<<" ";
+  }
+  
 };
 
 
+int main(){
 
-int main() {
+  cout<<"\nFixed Vector\n";
 
+  FixedVector vec;
 
-  cout<<"\nDynamic Vector\n";
+  vec.Insert(2);
+  vec.Insert(4);
+  vec.Insert(3);
+
+  vec.Print();
   
-    DynamicVector<int> v(3);
-
-    v.push_back(1);
-    v.push_back(2);
-    v.push_back(3);
-    v.push_back(5);
-    
-
-    v.print();
-    // cout<<"\nsize vector: "<<v.size();
-
-    return 0;
 }
+
+
 
