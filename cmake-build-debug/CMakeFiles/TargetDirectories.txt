@@ -1,8 +1,7 @@
-/home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/EDA.dir
-/home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/dynamicVector.dir
-/home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/VectorFijo.dir
-/home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/VectorDinamico.dir
-/home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/vectorModular.dir
-/home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/vectorDinamico.dir
-/home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/EDA.dir
+C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/VectorFijo.dir
+C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/VectorDinamico.dir
+C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/vectorModular.dir
+C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/vectorDinamico.dir
+C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/rebuild_cache.dir
