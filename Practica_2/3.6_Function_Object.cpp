@@ -20,6 +20,7 @@ public:
     }
 
     void print(){
+        cout<<"\n";
         for(float & iter : m_container){
             cout<<iter<<" ";
         }
@@ -42,6 +43,7 @@ int main(int argc, char* argv[])
     ds.Insert(4.5);
     ds.Insert(6.5);
     ds.Insert(3.9);
+    ds.print();
     funcobjclass<float> x;
     ds.sumone(x);
 
