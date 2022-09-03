@@ -3,5 +3,12 @@ C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/
 C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/VectorDinamico.dir
 C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/vectorModular.dir
 C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/vectorDinamico.dir
+C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/3.4_Abstract_Data_Type.dir
+C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/3.5_Design_Patterns.dir
+C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/3.6_Code_Workgroup.dir
+C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/3.7_Namespaces.dir
+C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/3.8_Run_Time.dir
+C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/3.8.1_Pool.dir
+C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/3.8.2_Reducing_code.dir
 C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/rebuild_cache.dir
