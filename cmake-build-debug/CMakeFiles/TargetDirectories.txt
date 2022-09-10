@@ -8,5 +8,6 @@ C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/
 C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/3.8.2_Reducing_code.dir
 C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/3.6_Function_Object.dir
 C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/3.4_Abstract_Data_Type.dir
+C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/comp.dir
 C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/Misash/Documents/Advanced-Data-Structures/cmake-build-debug/CMakeFiles/rebuild_cache.dir
