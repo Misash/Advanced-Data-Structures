@@ -17,6 +17,7 @@ struct point{
         y = 1 + (rand() % 20);
         z = 1 + (rand() % 20);
     }
+
 };
 
 

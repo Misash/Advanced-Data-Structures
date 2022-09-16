@@ -1,4 +1,4 @@
-# Install script for directory: /home/misash/Escritorio/UCSP/EDA
+# Install script for directory: /home/misash/ucsp/eda/Advanced-Data-Structures
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/misash/Escritorio/UCSP/EDA/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/misash/ucsp/eda/Advanced-Data-Structures/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
