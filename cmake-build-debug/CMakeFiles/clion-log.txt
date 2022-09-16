@@ -12,14 +12,5 @@
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Configuring done
-CMake Error at CMakeLists.txt:8 (add_executable):
-  Cannot find source file:
-
-    dynamicVector.cpp
-
-
-CMake Error at CMakeLists.txt:8 (add_executable):
-  No SOURCES given to target: dynamicVector
-
-
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+-- Generating done
+-- Build files have been written to: /home/misash/Escritorio/UCSP/EDA/cmake-build-debug

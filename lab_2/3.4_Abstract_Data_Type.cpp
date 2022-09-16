@@ -1,6 +1,7 @@
 //
-// Created by misash on 26/08/22.
+// Created by Misash on 2/09/2022.
 //
+
 #include <iostream>
 
 using namespace std;
@@ -60,7 +61,6 @@ private:
 int main() {
 
 
-    cout<<"\nOOP Vector\n";
 
     myVector<int> v(3);
 
@@ -71,7 +71,7 @@ int main() {
 
 
     v.print();
-    // cout<<"\nsize vector: "<<v.size();
+
 
     return 0;
 }
