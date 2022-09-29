@@ -10,5 +10,6 @@
 /home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/3.4_Abstract_Data_Type.dir
 /home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/comp.dir
 /home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/compVector.dir
+/home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/QuadTree.dir
 /home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/misash/Escritorio/UCSP/EDA/cmake-build-debug/CMakeFiles/rebuild_cache.dir

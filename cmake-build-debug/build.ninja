@@ -472,6 +472,40 @@ build compVector: CXX_EXECUTABLE_LINKER__compVector_Debug CMakeFiles/compVector.
   TARGET_FILE = compVector
   TARGET_PDB = compVector.pdb
 
+# =============================================================================
+# Object build statements for EXECUTABLE target QuadTree
+
+
+#############################################
+# Order-only phony target for QuadTree
+
+build cmake_object_order_depends_target_QuadTree: phony || CMakeFiles/QuadTree.dir
+
+build CMakeFiles/QuadTree.dir/ED/QuadTree.cpp.o: CXX_COMPILER__QuadTree_Debug /home/misash/Escritorio/UCSP/EDA/ED/QuadTree.cpp || cmake_object_order_depends_target_QuadTree
+  DEP_FILE = CMakeFiles/QuadTree.dir/ED/QuadTree.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/QuadTree.dir
+  OBJECT_FILE_DIR = CMakeFiles/QuadTree.dir/ED
+  TARGET_COMPILE_PDB = CMakeFiles/QuadTree.dir/
+  TARGET_PDB = QuadTree.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target QuadTree
+
+
+#############################################
+# Link the executable QuadTree
+
+build QuadTree: CXX_EXECUTABLE_LINKER__QuadTree_Debug CMakeFiles/QuadTree.dir/ED/QuadTree.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/QuadTree.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/QuadTree.dir/
+  TARGET_FILE = QuadTree
+  TARGET_PDB = QuadTree.pdb
+
 
 #############################################
 # Utility command for edit_cache
@@ -507,7 +541,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/misash/Escritorio/UCSP/EDA/cmake-build-debug
 
-build all: phony EDA VectorFijo VectorDinamico vectorModular vectorDinamico 3.5_Design_Patterns 3.7_Namespaces 3.8.2_Reducing_code 3.6_Function_Object 3.4_Abstract_Data_Type comp compVector
+build all: phony EDA VectorFijo VectorDinamico vectorModular vectorDinamico 3.5_Design_Patterns 3.7_Namespaces 3.8.2_Reducing_code 3.6_Function_Object 3.4_Abstract_Data_Type comp compVector QuadTree
 
 # =============================================================================
 # Built-in targets
