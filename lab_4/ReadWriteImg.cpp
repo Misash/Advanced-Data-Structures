@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <iostream>
+#include <bits/stdc++.h>
+
+using namespace std;
 
 typedef struct bmpFileHeader
 {
@@ -80,14 +84,16 @@ void TextDisplay(bmpInfoHeader *info, unsigned char *img)
 {
     int x, y;
     /* Reducimos la resolución vertical y horizontal para que la imagen entre en pantalla */
-    static const int reduccionX=6, reduccionY=4;
+//    static const int reduccionX=6, reduccionY=4;
+    static const int reduccionX=1, reduccionY=1;
     /* Si la componente supera el umbral, el color se marcará como 1. */
     static const int umbral=90;
     /* Asignamos caracteres a los colores en pantalla */
-    static unsigned char colores[9]=" bgffRGB";
+    static unsigned char colores[9]="obgfrRGB";
     int r,g,b;
 
     /* Dibujamos la imagen */
+
     for (y=info->height; y>0; y-=reduccionY)
     {
         for (x=0; x<info->width; x+=reduccionX)
@@ -96,11 +102,38 @@ void TextDisplay(bmpInfoHeader *info, unsigned char *img)
             g=(img[3*(x+y*info->width)+1]>umbral);
             r=(img[3*(x+y*info->width)+2]>umbral);
 
-            printf("%c", colores[b+g*2+r*4]);
+            printf("%c ", colores[b+g*2+r*4]);
         }
         printf("\n");
     }
+
 }
+
+void imgToMatrix(bmpInfoHeader *info,unsigned char *img,vector<vector<char>> &matrix){
+
+    int x, y;
+    static const int reduccionX=1, reduccionY=1;
+    static const int umbral=90;
+    static unsigned char colores[9]="obgfrRGB";
+    int r,g,b;
+
+    matrix = vector<vector<char> >(info->width, vector<char>(info->height));
+
+    for (y=info->height; y>0; y-=reduccionY)
+    {
+        for (x=0; x<info->width; x+=reduccionX)
+        {
+            b=(img[3*(x+y*info->width)]>umbral);
+            g=(img[3*(x+y*info->width)+1]>umbral);
+            r=(img[3*(x+y*info->width)+2]>umbral);
+
+            matrix[info->height-y][x] = colores[b+g*2+r*4];
+        }
+    }
+}
+
+
+
 
 void DisplayInfo(bmpInfoHeader *info)
 {
@@ -122,9 +155,20 @@ int main()
     bmpInfoHeader info;
     unsigned char *img;
 
-    img=LoadBMP("poesia.bmp", &info);
-    DisplayInfo(&info);
-    TextDisplay(&info, img);
+    img=LoadBMP("emojir.bmp", &info);
+//    DisplayInfo(&info);
+//    TextDisplay(&info, img);
+    vector<vector<char>> matrix;
+    imgToMatrix(&info,img,matrix);
+
+    for (int i = 0; i < matrix.size(); ++i) {
+        for (int j = 0; j < matrix[0].size(); ++j) {
+            cout<<matrix[i][j]<<"";
+        }
+        cout<<"\n";
+    }
+
+
 
     return 0;
 }
