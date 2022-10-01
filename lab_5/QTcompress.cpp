@@ -37,7 +37,7 @@ public:
     QuadTree(string filename, int umbral){
         this->umbral = umbral;
         Bitmap image;
-        image.open(filename);
+        image.open(filename + ".bmp");
         if(!image.isImage()) return;
 
         grid = image.pixels;
@@ -48,7 +48,7 @@ public:
         buildTreePyramid(root);
         drawLimits(root);
         image.fromPixelMatrix(grid);
-        image.save("output.bmp");
+        image.save(filename+"Output.bmp");
     }
 
 
@@ -185,7 +185,7 @@ public:
 
 int main(){
 
-    QuadTree<Pixel> qt("input.bmp",30);
+    QuadTree<Pixel> qt("input",0.1);
 
 
 }
