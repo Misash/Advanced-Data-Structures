@@ -19,7 +19,7 @@ sudo apt install g++
 
 Prueba con umbral 30 para la imagen "aves.bmp"
 ```c++
-    QuadTree<Pixel> qt("input.bmp",30);
+    QuadTree<Pixel> qt("aves.bmp",30);
 ```
 
 ![Screenshot](avesOutput.bmp)
