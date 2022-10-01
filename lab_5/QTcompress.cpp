@@ -75,7 +75,7 @@ unsigned char *LoadBMP(char *filename, bmpInfoHeader *bInfoHeader)
     return imgdata;
 }
 
-void imgToMatrix(bmpInfoHeader *info,unsigned char *img,vector<vector<char>> &matrix){
+void imgToMatrix(bmpInfoHeader *info,unsigned char *img,deque<deque<char>> &matrix){
 
     int x, y;
     static const int reduccionX=1, reduccionY=1;
@@ -83,7 +83,7 @@ void imgToMatrix(bmpInfoHeader *info,unsigned char *img,vector<vector<char>> &ma
     static unsigned char colores[9]="obgfrRGB";
     int r,g,b;
 
-    matrix = vector<vector<char> >(info->width, vector<char>(info->height));
+    matrix = deque<deque<char> >(info->width, deque<char>(info->height));
 
     for (y=info->height; y>0; y-=reduccionY)
     {
@@ -210,11 +210,7 @@ public:
     }
 
 
-
-
 };
-
-
 
 
 
@@ -226,10 +222,10 @@ int main(){
     bmpInfoHeader info;
     unsigned char *img;
 
-    img=LoadBMP("emojir.bmp", &info);
+    img=LoadBMP("cat2.bmp", &info);
 //    DisplayInfo(&info);
 //    TextDisplay(&info, img);
-    vector<vector<char>> matrix;
+    deque<deque<char>> matrix;
     imgToMatrix(&info,img,matrix);
 
 //    for (int i = 0; i < matrix.size(); ++i) {
@@ -239,28 +235,17 @@ int main(){
 //        cout<<"\n";
 //    }
 
-    deque<deque<char>> grid= {  {'v','v','v','v','0','0','0','0'},
-                                {'v','v','v','v','0','0','0','0'},
-                                {'v','v','v','v','v','v','v','v'},
-                                {'v','v','v','v','v','v','v','v'},
-                                {'v','v','v','v','0','0','0','0'},
-                                {'v','v','v','v','0','0','0','0'},
-                                {'v','v','v','v','0','0','0','0'},
-                                {'v','v','v','v','0','0','0','0'}};
+//    deque<deque<char>> grid= {  {'v','v','v','v','0','0','0','0'},
+//                                {'v','v','v','v','0','0','0','0'},
+//                                {'v','v','v','v','v','v','v','v'},
+//                                {'v','v','v','v','v','v','v','v'},
+//                                {'v','v','v','v','0','0','0','0'},
+//                                {'v','v','v','v','0','0','0','0'},
+//                                {'v','v','v','v','0','0','0','0'},
+//                                {'v','v','v','v','0','0','0','0'}};
 
-    QuadTree<char> qt(grid);
+    QuadTree<char> qt(matrix);
     qt.Print();
-
-
-
-
-
-
-//
-//    QuadTree<char> qt(matrix);
-//    cout<<"\nsize "<<qt.size;
-//    cout<<"\ndepht "<<qt.depth;
-//    qt.Print();
 
 
 }

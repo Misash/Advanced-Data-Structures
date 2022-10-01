@@ -34,6 +34,10 @@ unsigned char *LoadBMP(char *filename, bmpInfoHeader *bInfoHeader);
 void DisplayInfo(bmpInfoHeader *info);
 void TextDisplay(bmpInfoHeader *info, unsigned char *img);
 
+
+int size ;
+
+
 unsigned char *LoadBMP(char *filename, bmpInfoHeader *bInfoHeader)
 {
 
@@ -69,7 +73,9 @@ unsigned char *LoadBMP(char *filename, bmpInfoHeader *bInfoHeader)
     fseek(f, header.offset, SEEK_SET);
 
     /* Leemos los datos de imagen, tantos bytes como imgsize */
+
     fread(imgdata, bInfoHeader->imgsize,1, f);
+    size = bInfoHeader->imgsize ;
 
 
     /* Cerramos */
@@ -80,7 +86,7 @@ unsigned char *LoadBMP(char *filename, bmpInfoHeader *bInfoHeader)
 }
 
 
-void TextDisplay(bmpInfoHeader *info, unsigned char *img)
+void TextDisplay(char *filename,bmpInfoHeader *info, unsigned char *img)
 {
     int x, y;
     /* Reducimos la resolución vertical y horizontal para que la imagen entre en pantalla */
@@ -102,11 +108,23 @@ void TextDisplay(bmpInfoHeader *info, unsigned char *img)
             g=(img[3*(x+y*info->width)+1]>umbral);
             r=(img[3*(x+y*info->width)+2]>umbral);
 
+//            img[3*(x+y*info->width)] = 'w';
+//            img[3*(x+y*info->width)+1] = 'w';
+//            img[3*(x+y*info->width)+2] = 'w';
+
             printf("%c ", colores[b+g*2+r*4]);
         }
         printf("\n");
     }
 
+
+    FILE *f;
+//    f = fopen(filename,'w');
+    f=fopen (filename, "r");
+    /* Leemos los datos de imagen, tantos bytes como imgsize */
+    fwrite(img,1, sizeof(img), f);
+
+    fclose(f);
 }
 
 void imgToMatrix(bmpInfoHeader *info,unsigned char *img,vector<vector<char>> &matrix){
@@ -130,6 +148,13 @@ void imgToMatrix(bmpInfoHeader *info,unsigned char *img,vector<vector<char>> &ma
             matrix[info->height-y][x] = colores[b+g*2+r*4];
         }
     }
+
+
+
+
+
+
+
 }
 
 
@@ -155,18 +180,18 @@ int main()
     bmpInfoHeader info;
     unsigned char *img;
 
-    img=LoadBMP("emojir.bmp", &info);
-//    DisplayInfo(&info);
-//    TextDisplay(&info, img);
+    img=LoadBMP("cat2.bmp", &info);
+    DisplayInfo(&info);
+    TextDisplay("cat3.bmp",&info, img);
     vector<vector<char>> matrix;
-    imgToMatrix(&info,img,matrix);
-
-    for (int i = 0; i < matrix.size(); ++i) {
-        for (int j = 0; j < matrix[0].size(); ++j) {
-            cout<<matrix[i][j]<<"";
-        }
-        cout<<"\n";
-    }
+//    imgToMatrix(&info,img,matrix);
+//
+//    for (int i = 0; i < matrix.size(); ++i) {
+//        for (int j = 0; j < matrix[0].size(); ++j) {
+//            cout<<matrix[i][j]<<"";
+//        }
+//        cout<<"\n";
+//    }
 
 
 
