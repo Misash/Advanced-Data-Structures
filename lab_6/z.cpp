@@ -11,20 +11,26 @@
 #include <ctime>
 #include <ratio>
 #include <chrono>
+#include "tree.cpp"
 using namespace std;
 
+CBinTree<int> tree;
+int xx,yy;
+vector<int> range;
+
+//int cont;
 random_device rd;
 mt19937 gen(rd());
 uniform_int_distribution<> distrib(0, 10);
 
-vector<int> generadorPuntos(int dimensiones){
-    vector<int> punto;
-    for (int a = 0; a < dimensiones; ++a){
-        int rand = distrib(gen);
-        punto.push_back(rand);
-    }
-    return punto;
-}
+//vector<int> generadorPuntos(int dimensiones){
+//    vector<int> punto;
+//    for (int a = 0; a <= dimensiones; ++a){
+////        int rand = distrib(gen);
+//        punto.push_back(rand);
+//    }
+//    return punto;
+//}
 int generadorAleatorio(int max){
     uniform_int_distribution<> distrib1(0, max);
     int p= distrib1(gen);
@@ -65,26 +71,34 @@ unsigned long long reduccion(vector<string> punto_z, int dimensiones){
             resultado.push_back(punto_z[j].at(i));
         }
     }
-    //cout<<" Punto en Z order --> "<< resultado<<endl;
+//    cout<<" Punto en Z order --> "<< resultado<<endl;
     return to_long_long(resultado);
 }
 vector<unsigned long long> Z_order(vector<vector<int>>& puntos,vector<vector<int>>& ejes,int dimensiones){
     vector<unsigned long long> puntos_z;
     for (int i = 0; i < puntos.size(); i++){
         vector<int> p=puntos[i];
-        //print_punto(dimensiones,p); cout<<endl;
+        print_punto(dimensiones,p); cout<<endl;
         vector<string> punto_z;
         for (int j = 0; j < dimensiones; j++){
             int k = 0;
             for (; k < ejes[j].size(); k++){
                 if(ejes[j][k]==p[j]){break;}
             }
-            //cout<<"index eje : "<< k<< " ->";
+            cout<<"index eje : "<< k<< " ->";
             punto_z.push_back(to_Binary(k));
-            //cout<<" // binario eje "<< j<<" --> "<< punto_z[punto_z.size()-1]<<endl;
+
+            //insercion
+//            tree.Ins(k);
+
+            cout<<" // binario eje "<< j<<" --> "<< punto_z[punto_z.size()-1]<<endl;
         }
         puntos_z.push_back(reduccion(punto_z,dimensiones));
-        //cout<<" Punto en Z order --> "<< puntos_z[puntos_z.size()-1]<<endl;
+        cout<<" Punto en Z order --> "<< puntos_z[puntos_z.size()-1]<<endl;
+    }
+    cout<<"\nPUNTOS Z EN Z ORDER:";
+    for(auto zs: puntos_z){
+        cout<<zs<<" ";
     }
     return puntos_z;
 }
@@ -129,34 +143,58 @@ int comparar_knn(vector<pair<float,int>> knn,vector<pair<float,int>>knn_z){
 }
 
 int main(){
-    int num_puntos = 5000;
-    vector<int> v_dimenciones = {2,5,10,25,50};
+
+    int num_puntos = 7;
+    int a,b;
+
+    vector<int> v_dimenciones = {2,3,4};
     for (int j = 0; j < v_dimenciones.size(); j++){
         cout<<"Z Order para "<< v_dimenciones[j]<< " dimensiones."<<endl;
         vector<vector<int>> puntos;
         vector<unsigned long long> puntos_z;
         int dimensiones = v_dimenciones[j];
         vector<vector<int>> ejes(dimensiones);
+        vector<int> p;
         for (int i = 0; i < num_puntos; i++){
-            vector<int> p=generadorPuntos(dimensiones);
-            puntos.push_back(p);
-            crear_Z_curve(p,ejes,dimensiones);
+//            vector<int> p=generadorPuntos(dimensiones);
+            for(int j=0; j < num_puntos ; j++){
+                vector<int> p= { i,j};
+                puntos.push_back(p);
+                crear_Z_curve(p,ejes,dimensiones);
+            }
+
+//            p.push_back(i);
+
         }
 
         for (int i = 0; i < dimensiones; i++){
             sort(ejes[i].begin(),ejes[i].end());
         }
-        /*
+
         cout<<"Ejes :"<<endl;
         for (int i = 0; i < dimensiones; i++){
             print_punto(ejes[i].size(),ejes[i]);
             cout<<endl;
         }
-        */
+
 
         puntos_z=Z_order(puntos,ejes,dimensiones);
 
+//        cout<<"\n z puntos: \n";
         vector<int> puntos_muestra;
+//        for(auto zs:puntos_z){
+//            tree.Ins(zs);
+//        }
+//        cout<<"\n";
+//        cout<<"ingrese rango: "; cin>>a>>b;
+//        cout<<"\nrange query: \n";
+//        vector<int> nums;
+//        tree.FindRange(a,b,nums);
+//        for(int num: nums){
+//            cout<<num<<" ";
+//        }
+//        cout<<"\n";
+
         for (int i = 0; i < 10 ;){
             int t=generadorAleatorio(num_puntos-1);
             //cout<<t<<endl;
@@ -165,17 +203,16 @@ int main(){
                 i++;
             }
         }
-        //print_punto(puntos_muestra.size(),puntos_muestra);cout<<endl;
-        /*
-        cout<<"Muestra :"<<endl;
-        for (int i = 0; i < 10 ;i++){
-            int it=puntos_muestra[i];
-            print_punto(dimensiones,puntos[it]);
-            cout<<" --> "<<puntos_z[it]<<endl;
-        }
-        */
+        print_punto(puntos_muestra.size(),puntos_muestra);cout<<endl;
 
-        vector<int> knn_number = {5, 10, 15, 20};
+        cout<<"Mapeo :"<<endl;
+        for (int i = 0; i < num_puntos ;i++){
+            print_punto(dimensiones,puntos[i]);
+            cout<<" --> "<<puntos_z[i]<<endl;
+        }
+
+
+        vector<int> knn_number = {5, 10};
         vector<float> promedios(4,0.0);
         for (int m = 0; m < 10 ;m++){
             vector<int> knn_comparacion;
@@ -194,14 +231,17 @@ int main(){
             }
         }
 
-        cout<<"Promedios :"<<endl;
+//        cout<<"\n puntos : \n";
+//        cout<<puntos.size();
+
+        //cout<<"Promedios :"<<endl;
         float general=0.0;
         for (int i = 0; i < knn_number.size() ;i++){
             promedios[i]/=10;
-            cout<< knn_number[i]<<" knn Comparacion = "<<promedios[i]<<" %"<<endl;
+            //cout<< knn_number[i]<<" knn Comparacion = "<<promedios[i]<<" %"<<endl;
             general+=promedios[i];
         }
-        cout<<"General ->" <<general/4<<" %"<<endl;
+       // cout<<"General ->" <<general/4<<" %"<<endl;
     }
     return 0;
 }
