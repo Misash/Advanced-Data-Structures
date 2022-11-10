@@ -93,7 +93,7 @@ public:
     std::shared_ptr<Node> root_pointer_;
 };
 
-/** Node R-tree struct implementation details*/
+/** node R-tree struct implementation details*/
 template <size_t N, typename ElemType, size_t M, size_t m>
 typename RTree<N, ElemType, M, m>::Node::iterator
 RTree<N, ElemType, M, m>::Node::begin() {
