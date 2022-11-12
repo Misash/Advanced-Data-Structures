@@ -11,7 +11,7 @@
 
 using namespace std;
 
-struct Point{
+struct Pixel{
     double x;
     double y;
 };
@@ -25,9 +25,9 @@ static const inline double distance(double x1, double y1, double x2, double y2)
     return sqrt(dx * dx + dy * dy);
 }
 
-const inline int region_query(const std::vector<Point> &input, int p, std::vector<int> &output, double eps)
+const inline int region_query(const std::vector<Pixel> &input, int p, std::vector<int> &output, double eps)
 {
-    for(int i = 0; i < (int)input.size(); i++){
+    for(int i = 0; i < input.size(); i++){
 
         if(distance(input[i].x, input[i].y, input[p].x, input[p].y) < eps){
             output.push_back(i);
@@ -37,7 +37,7 @@ const inline int region_query(const std::vector<Point> &input, int p, std::vecto
     return output.size();
 }
 
-bool expand_cluster(const std::vector<Point> &input, int p, std::vector<int> &output, int cluster, double eps, int min)
+bool expand_cluster(const std::vector<Pixel> &input, int p, std::vector<int> &output, int cluster, double eps, int min)
 {
     std::vector<int> seeds;
 
@@ -50,7 +50,7 @@ bool expand_cluster(const std::vector<Point> &input, int p, std::vector<int> &ou
     }else{
 
         //set cluster id
-        for(int i = 0; i < (int)seeds.size(); i++){
+        for(int i = 0; i < seeds.size(); i++){
             output[seeds[i]] = cluster;
         }
 
@@ -58,14 +58,14 @@ bool expand_cluster(const std::vector<Point> &input, int p, std::vector<int> &ou
         seeds.erase(std::remove(seeds.begin(), seeds.end(), p), seeds.end());
 
         //seed -> empty
-        while((int)seeds.size() > 0){
+        while(seeds.size() > 0){
 
             int cp = seeds.front();
             std::vector<int> result;
 
             if(region_query(input, cp, result, eps) >= min){
 
-                for(int i = 0; i < (int)result.size(); i++){
+                for(int i = 0; i < result.size(); i++){
 
                     int rp = result[i];
 
@@ -91,7 +91,7 @@ bool expand_cluster(const std::vector<Point> &input, int p, std::vector<int> &ou
     return true;
 }
 
-int dbscan(const std::vector<Point> &input, std::vector<int> &labels, double eps, int min)
+int dbscan(const std::vector<Pixel> &input, std::vector<int> &labels, double eps, int min)
 {
     int size = input.size();
     int cluster = 1;
@@ -100,6 +100,7 @@ int dbscan(const std::vector<Point> &input, std::vector<int> &labels, double eps
 
     for(int i = 0; i < size; i++){
 
+        //set a cluster group
         if(!state[i]){
 
             if(expand_cluster(input, i, state, cluster, eps, min)){
@@ -118,7 +119,7 @@ int dbscan(const std::vector<Point> &input, std::vector<int> &labels, double eps
 
 int main(){
 
-    vector<Point> points(10);
+    vector<Pixel> points(10);
 
     points[0].x = 20; points[0].y = 21;
     points[1].x = 20; points[1].y = 25;
@@ -138,7 +139,7 @@ int main(){
     cout<<"cluster size is "<<num<<endl;
 
     for(int i = 0; i < (int)points.size(); i++){
-        std::cout<<"Point("<<points[i].x<<", "<<points[i].y<<"): "<<labels[i]<<std::endl;
+        std::cout<<"Pixel("<<points[i].x<<", "<<points[i].y<<"): "<<labels[i]<<std::endl;
     }
 
     return 0;
