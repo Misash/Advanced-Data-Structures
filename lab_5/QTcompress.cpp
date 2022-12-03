@@ -126,12 +126,12 @@ public:
         drawLimits(data->children[0]);
         drawLimits(data->children[1]);
         for (int i = data->x; i < data->x+data->dim ; ++i) {
-            grid[i][data->y] = Pixel(0,255,213);
-            grid[i][data->y+data->dim -1] =Pixel(0,255,213);
+            grid[i][data->y] = Pixel(0, 255, 213);
+            grid[i][data->y+data->dim -1] =Pixel(0, 255, 213);
         }
         for (int j = data->y; j < data->y + data->dim; ++j) {
-            grid[data->x][j] = Pixel(0,255,213);
-            grid[data->x + data->dim - 1][j] = Pixel(0,255,213);
+            grid[data->x][j] = Pixel(0, 255, 213);
+            grid[data->x + data->dim - 1][j] = Pixel(0, 255, 213);
         }
         drawLimits(data->children[2]);
         drawLimits(data->children[3]);
@@ -185,7 +185,7 @@ public:
 
 int main(){
 
-    QuadTree<Pixel> qt("input",0.1);
+    QuadTree<Pixel> qt("input", 0.1);
 
 
 }

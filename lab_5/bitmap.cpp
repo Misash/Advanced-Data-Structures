@@ -127,7 +127,7 @@ void Bitmap::open(std::string filename)
                     int green = file.get();
                     int red = file.get();
 
-                    row_data.push_back( Pixel(red, green, blue) );
+                    row_data.push_back(Pixel(red, green, blue) );
                 }
 
                 // Rows are padded so that they're always a multiple of 4

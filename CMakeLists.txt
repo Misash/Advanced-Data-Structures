@@ -25,3 +25,4 @@ add_executable(bitmap lab_5/bitmap.cpp)
 add_executable(z lab_6/z.cpp)
 
 add_executable(dbscan lab_7/dbscan.cpp)
+add_executable(dbscan2 lab_7/dbscan2.cpp)
